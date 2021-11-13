@@ -33,12 +33,11 @@ Router.post("/author/new", (req, res) => {
 // Method      Put
 // Params in the req.body are always in string format
 Router.put("/update/name/:id",async(req,res)=>{
-    const UpdatedAuthor=await AuthorModel.findOneAndUpdate({id:parseInt(req.params.id),},{
+    const UpdatedAuthor=await AuthorModel.findOneAndUpdate({id:parseInt(req.params.id)},{
         name:req.body.newAuthorName
     },{
         new:true,
-    }
-    )
+    })})
 //TODO: Student Task
 /*
 Route               /author/delete
