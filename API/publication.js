@@ -8,7 +8,12 @@ Access          PUBLIC
 Parameters      NONE
 Method          GET
 */
-
+Router.get("/",async(req,res)=>{
+    const getAllPublications=await PublicationModel.find()
+    
+    return res.json({"publications":getAllPublications})
+    
+})
 //TODO: Student Task
 /*
 Route               /publication/delete
